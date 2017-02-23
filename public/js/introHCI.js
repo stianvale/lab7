@@ -3,6 +3,8 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+	$(".likeCtr").click(sendAnalytics);
+	$(".likeBtn").click(sendAnalytics);
 });
 
 /*
@@ -11,3 +13,9 @@ $(document).ready(function() {
 function initializePage() {
 	// your code here
 }
+
+function sendAnalytics(){
+	ga("send", "event", 'like', 'click');
+}
+
+
